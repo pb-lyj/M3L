@@ -216,7 +216,6 @@ def main():
         # 并行环境设置
         n_envs = 4
         episodes_per_env = 100
-        report_interval = 10
         
         zero_seed = 42
         print(f"设置随机种子: {zero_seed}")

@@ -21,7 +21,7 @@ def show_and_save_tactile(tactile, step, save_dir, size=(240, 240), max_shear=0.
     """
     tactile = np.asarray(tactile)
     tactile = tactile[0]  # shape: (4, 6, 32, 32)
-    assert tactile.shape[1] == 6, "预期每帧有6个通道（右xyz + 左xyz）"
+    assert tactile.shape[1] == 6, "每帧有6个通道（右xyz + 左xyz）"
 
     frame_stack = tactile.shape[0]
     imgs_right = []
@@ -204,8 +204,8 @@ def main():
             0,
             seed=42,
             state_type="vision_and_touch",
-            objects=objects,
-            holders=holders,
+            objects=["square"],
+            holders=["holder1"],
             camera_idx=0,
             frame_stack=4,
             no_rotation=True,
